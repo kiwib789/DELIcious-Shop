@@ -1,2 +1,4 @@
-public abstract Product {
+public abstract class Product {
+    protected String name;
+
 }
