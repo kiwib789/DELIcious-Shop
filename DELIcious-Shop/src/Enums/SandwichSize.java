@@ -1,5 +1,6 @@
 package Enums;
 
-public class SandwichSize {
+public enum SandwichSize {
+    // 4,8,12 inches
 
 }

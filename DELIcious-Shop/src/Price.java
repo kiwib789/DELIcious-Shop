@@ -1,2 +1,3 @@
-public class Price {
+public abstract class Price {
+    abstract double getPrice();
 }
