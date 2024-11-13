@@ -1,5 +1,5 @@
 public enum SandwichSize {
-    SMALL;
-    MEDIUM;
+    SMALL,
+    MEDIUM,
     LARGE;
 }

@@ -5,7 +5,11 @@ public class RegularToppings extends Toppings{
         super(name, price);
     }
 
-
+    // lettuce
+    // peppers
+    // onions
+    // tomatoes
+    // jalepenos
     @Override
     public void toppingType() {
         super.toppingType();

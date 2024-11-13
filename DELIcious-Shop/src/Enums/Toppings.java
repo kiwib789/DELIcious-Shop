@@ -1,31 +1,51 @@
 package Enums;
 
-public abstract class Toppings {
+import static jdk.internal.jrtfs.JrtFileAttributeView.AttrID.size;
+
+public class Toppings {
     private String name;
     private double price;
+    private ToppingType type;
 
-    public Toppings(String name, double price) {
+    public Toppings(String name, double price, ToppingType type) {
         this.name = name;
         this.price = price;
+        this.type = type;
     }
 
-    public String getName() {
-        return name;
+    public double getPriceBySize(SandwichSize size) {
+        double result;
+
+        if (size == SandwichSize.LARGE) {
+            result = 3.0;
+        } else if (size == SandwichSize.MEDIUM) {
+            result = 2.0;
+
+        } else {
+            result = 1.0;
+        }
+        return result;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public double getPriceByMeat(Toppings toppings) {
+        double result;
+        if (toppings == Meats.LARGE) {
+            result = 3.0;
+        } else if (toppings == Meats.MEDIUM) {
+            result = 2.0;
 
-    public double getPrice() {
-        return price;
-    }
+        } else {
+            result = 1.0;
+            // do for meat and cheese
+        }
 
-    public void setPrice(double price) {
-        this.price = price;
+        return result;
     }
-    // method to get the type of topping
-    public void toppingType(){
-
+    public double getPriceByCheese(Toppings toppings){
+        double result;
+        if (toppings == Toppings.LARGE){
+            result = 0.90;
+        }
+        return result;
     }
 }

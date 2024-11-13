@@ -1,8 +1,11 @@
+import Enums.Toppings;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
 
-public class Sandwich {
+public class Sandwich extends Product {
 
     // Sandwich class to represent a sandwich with bread type, ingredients, size, and if it is toasted or not
 
@@ -13,6 +16,7 @@ public class Sandwich {
     private String size;
 
     private boolean isToasted;
+    private  final List<Toppings> toppings = new ArrayList<>();
 
 
 
@@ -21,6 +25,7 @@ public class Sandwich {
     // constructor for sandwich class
 
     public Sandwich(String breadType, List<String> ingredients, String size, boolean isToasted) {
+        super(name,0);
 
         this.breadType = breadType;
 
@@ -29,6 +34,8 @@ public class Sandwich {
         this.size = size;
 
         this.isToasted = isToasted;
+
+        if (si)
 
     }
 
@@ -99,6 +106,10 @@ public class Sandwich {
         isToasted = toasted;
 
     }
+    public void addTopping(Toppings topping){
+        toppings.add(topping);
+
+    }
 
     // method to get the total price of the sandwich
 
@@ -107,8 +118,6 @@ public class Sandwich {
 
 
     }
-
-
 
     @Override
 
@@ -128,4 +137,8 @@ public class Sandwich {
 
     }
 
+    @Override
+    public double getPrice() {
+        return 0;
+    }
 }
