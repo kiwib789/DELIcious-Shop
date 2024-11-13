@@ -1,3 +1,4 @@
+import Enums.SandwichSize;
 import Enums.Toppings;
 
 import java.util.ArrayList;
@@ -115,7 +116,19 @@ public class Sandwich extends Product {
 
     public void totalPrice(){
 
+        public double getPriceBySize(SandwichSize size) {
+            double result;
 
+            if (size == SandwichSize.LARGE) {
+                result = 3.0;
+            } else if (size == SandwichSize.MEDIUM) {
+                result = 2.0;
+
+            } else {
+                result = 1.0;
+            }
+            return result;
+        }
 
     }
 
