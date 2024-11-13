@@ -13,19 +13,7 @@ public class Toppings {
         this.type = type;
     }
 
-    public double getPriceBySize(SandwichSize size) {
-        double result;
 
-        if (size == SandwichSize.LARGE) {
-            result = 3.0;
-        } else if (size == SandwichSize.MEDIUM) {
-            result = 2.0;
-
-        } else {
-            result = 1.0;
-        }
-        return result;
-    }
 
     public double getPriceByMeat(Toppings toppings) {
         double result;

@@ -4,6 +4,8 @@ import Enums.Toppings;
 import java.util.ArrayList;
 import java.util.List;
 
+import static Enums.SandwichSize.LARGE;
+import static Enums.SandwichSize.MEDIUM;
 
 
 public class Sandwich extends Product {
@@ -17,16 +19,14 @@ public class Sandwich extends Product {
     private String size;
 
     private boolean isToasted;
-    private  final List<Toppings> toppings = new ArrayList<>();
 
-
-
+    private final List<Toppings> toppings = new ArrayList<>();
 
 
     // constructor for sandwich class
 
-    public Sandwich(String breadType, List<String> ingredients, String size, boolean isToasted) {
-        super(name,0);
+    public Sandwich(String name, String breadType, List<String> ingredients, String size, boolean isToasted) {
+        super(name, 0);
 
         this.breadType = breadType;
 
@@ -36,12 +36,8 @@ public class Sandwich extends Product {
 
         this.isToasted = isToasted;
 
-        if (si)
 
     }
-
-
-
 
 
     // getters and setters
@@ -53,13 +49,11 @@ public class Sandwich extends Product {
     }
 
 
-
     public void setBreadType(String breadType) {
 
         this.breadType = breadType;
 
     }
-
 
 
     public List<String> getIngredients() {
@@ -69,13 +63,11 @@ public class Sandwich extends Product {
     }
 
 
-
     public void setIngredients(List<String> ingredients) {
 
         this.ingredients = ingredients;
 
     }
-
 
 
     public String getSize() {
@@ -85,13 +77,11 @@ public class Sandwich extends Product {
     }
 
 
-
     public void setSize(String size) {
 
         this.size = size;
 
     }
-
 
 
     public boolean isToasted() {
@@ -101,31 +91,33 @@ public class Sandwich extends Product {
     }
 
 
-
     public void setToasted(boolean toasted) {
 
         isToasted = toasted;
 
     }
-    public void addTopping(Toppings topping){
+
+    public void addTopping(Toppings topping) {
         toppings.add(topping);
 
     }
 
     // method to get the total price of the sandwich
 
-    public void totalPrice(){
+    public void totalPrice() {
 
-        public double getPriceBySize(SandwichSize size) {
+        public double getPriceBySize () {
             double result;
-
-            if (size == SandwichSize.LARGE) {
-                result = 3.0;
-            } else if (size == SandwichSize.MEDIUM) {
-                result = 2.0;
-
-            } else {
-                result = 1.0;
+            // Get sandwich size of small, medium, or large
+            switch (size) {
+                case LARGE:
+                    result = 8.50;
+                    break;
+                case MEDIUM:
+                    result = 7.00;
+                    break;
+                case SMALL:
+                    result = 5.50;
             }
             return result;
         }
